@@ -42,7 +42,6 @@ class LoginForm extends Component {
         }
     }
 
-
     
     render() {
         const { email, password } = this.props;
