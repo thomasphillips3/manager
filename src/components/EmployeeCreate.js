@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Picker, Text, View } from 'react-native';
-import { employeeUpdate } from '../actions';
+import { employeeUpdate, employeeCreate } from '../actions';
 import { CardSection, Card, Input, Button } from './common';
 
-class EmployeeCreateForm extends Component {
+class EmployeeCreate extends Component {
+    onButtonPress() {
+        const { name, phone, shift } = this.props;
+        
+        this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+    }
+
     render() {
         return (
         <Card>
@@ -46,7 +52,7 @@ class EmployeeCreateForm extends Component {
             </CardSection>
 
             <CardSection>
-                <Button>
+                <Button onPress={this.onButtonPress.bind(this)}>
                     Create
                 </Button>
             </CardSection>
@@ -69,4 +75,6 @@ const styles = {
     }
 };
 
-export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreateForm);
+export default connect(mapStateToProps, { 
+    employeeUpdate, employeeCreate 
+})(EmployeeCreate);
