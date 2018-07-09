@@ -26,15 +26,6 @@ class EmployeeCreateForm extends Component {
                 />
             </CardSection>
 
-            <CardSection>
-                <Input
-                    label="Phone"
-                    placeholder="555-777-9311"
-                    value={this.props.phone}
-                    onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
-                />
-            </CardSection>
-
             <CardSection style={{ flexDirection: 'column' }}>
                 <View>
                     <Text style={styles.pickerTextStyle}>Pick a shift</Text>
