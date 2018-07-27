@@ -23,9 +23,10 @@ class EmployeeList extends Component {
         this.dataSource = ds.cloneWithRows(employees);
     }
 
-    renderRow(){
-        return <ListItem employee={employee} />
+    renderRow(employee){
+        return (<ListItem employee={employee} />);
     }
+    
     render() {
         console.log(this.props);
         return (
